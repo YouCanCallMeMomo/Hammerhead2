@@ -1,7 +1,7 @@
 const WA_LINK = 'https://wa.me/6282146469654?text=Hi%20Abdul!%20I%27m%20interested%20in%20a%20Maldives%20Dive%20Safari.'
 
-// Underwater Maldives ocean hero image (Unsplash)
-const HERO_IMG = 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=80'
+// Underwater Maldives ocean hero image (Local)
+const HERO_IMG = '/hero-bg.jpg'
 
 export default function Hero({ lang }) {
   const t = {
