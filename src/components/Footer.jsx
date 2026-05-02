@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="site-footer">
       <p>
         © {year} Abdul Manan · Maldives Dive Guide
-        &nbsp;·&nbsp; SSI Divemaster Instructor · Dive Pro #56293
+        &nbsp;·&nbsp; PADI OWSI #465559 &nbsp;·&nbsp; SSI Dive Pro #56293
       </p>
       <p>
         <a href="https://wa.me/6282146469654" target="_blank" rel="noreferrer">WhatsApp</a>

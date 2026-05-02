@@ -1,8 +1,8 @@
-// Boat / Maldives dhoni images from Unsplash
+// Local extracted boat images
 const PHOTOS = [
-  { src: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&q=80', alt: 'Liveaboard vessel at sunset, Maldives', main: true },
-  { src: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800&q=80', alt: 'Underwater coral reef Maldives' },
-  { src: 'https://images.unsplash.com/photo-1519053054369-472c24c42f79?w=800&q=80', alt: 'Maldives deck view' },
+  { src: '/boat-main.jpg', alt: 'Liveaboard vessel at sunset, Maldives', main: true },
+  { src: '/boat-sm-1.jpg', alt: 'Underwater coral reef Maldives' },
+  { src: '/boat-sm-2.jpg', alt: 'Maldives deck view' },
 ]
 
 const SPECS = [

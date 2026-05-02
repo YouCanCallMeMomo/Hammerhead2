@@ -14,7 +14,7 @@ export default function FAQ({ lang }) {
       eyebrow: 'FAQ',
       h2: 'Common questions',
       items: [
-        { q: 'What certification do I need?', a: 'Open Water (OW) minimum for most trips. Advanced Open Water recommended for deeper sites. I offer refresher dives for anyone returning after a long break.' },
+        { q: 'What certification do I need?', a: 'A minimum of PADI Open Water — or equivalent SSI, CMAS or NAUI certification — is required for all trips. PADI Advanced Open Water is recommended for deeper channel dives. If you are not yet certified, contact me and I can discuss options.' },
         { q: 'What equipment is included?', a: 'BCD, regulator, wetsuit, mask, fins, dive computer, and tank are all included. You\'re welcome to bring your own gear.' },
         { q: 'How do I book?', a: 'Contact me directly on WhatsApp (+62 821 4646 9654). We\'ll discuss availability, your preferences, and I\'ll send you a booking summary and deposit details. No third-party platforms.' },
         { q: 'What is the best time to visit?', a: 'December–April for the South Malé and Ari Atolls (calm seas, excellent visibility). June–September for manta rays and whale sharks in Baa and Lhaviyani Atolls.' },
@@ -26,7 +26,7 @@ export default function FAQ({ lang }) {
       eyebrow: 'FAQ',
       h2: 'Pertanyaan umum',
       items: [
-        { q: 'Sertifikasi apa yang saya butuhkan?', a: 'Minimum Open Water (OW) untuk sebagian besar perjalanan. Advanced Open Water direkomendasikan untuk situs yang lebih dalam.' },
+        { q: 'Sertifikasi apa yang saya butuhkan?', a: 'Minimal PADI Open Water — atau setara SSI, CMAS, atau NAUI — diwajibkan. PADI Advanced Open Water direkomendasikan untuk situs yang lebih dalam. Jika Anda belum tersertifikasi, hubungi saya.' },
         { q: 'Peralatan apa yang termasuk?', a: 'BCD, regulator, wetsuit, masker, fins, dive computer, dan tangki semuanya termasuk.' },
         { q: 'Bagaimana cara memesan?', a: 'Hubungi saya langsung di WhatsApp (+62 821 4646 9654). Tidak ada platform pihak ketiga.' },
         { q: 'Kapan waktu terbaik untuk berkunjung?', a: 'Desember–April untuk laut yang tenang. Juni–September untuk pari manta dan hiu paus.' },
@@ -38,7 +38,7 @@ export default function FAQ({ lang }) {
       eyebrow: 'FAQ',
       h2: 'Häufige Fragen',
       items: [
-        { q: 'Welche Zertifizierung brauche ich?', a: 'Mindestens Open Water (OW). Advanced Open Water für tiefere Spots empfohlen.' },
+        { q: 'Welche Zertifizierung brauche ich?', a: 'Mindestens PADI Open Water — oder gleichwertig SSI, CMAS oder NAUI. PADI Advanced Open Water für tiefere Spots empfohlen. Wenn Sie noch nicht zertifiziert sind, kontaktieren Sie mich.' },
         { q: 'Welche Ausrüstung ist inklusive?', a: 'BCD, Regler, Neoprenanzug, Maske, Flossen, Tauchcomputer und Flasche sind alle inklusive.' },
         { q: 'Wie kann ich buchen?', a: 'Kontaktieren Sie mich direkt auf WhatsApp (+62 821 4646 9654). Keine Drittanbieter-Plattformen.' },
         { q: 'Wann ist die beste Reisezeit?', a: 'Dezember–April für ruhiges Meer. Juni–September für Mantas und Walhaie.' },

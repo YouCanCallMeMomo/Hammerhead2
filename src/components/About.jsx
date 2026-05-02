@@ -1,6 +1,3 @@
-// Abdul Manan guide photo (Unsplash diver portrait)
-const PHOTO = 'https://images.unsplash.com/photo-1560275619-4cc5fa59d3ae?w=840&q=80'
-
 export default function About({ lang }) {
   const t = {
     en: {
@@ -58,9 +55,21 @@ export default function About({ lang }) {
         <div className="divider-rule" />
 
         <div className="about-grid">
-          {/* Photo + SSI Badge */}
+          {/* Photo + PADI Badge + SSI Badge */}
           <div className="about-photo-wrap reveal">
-            <img src={PHOTO} alt="Abdul Manan — Maldives Dive Guide" />
+            <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" />
+            
+            <div className="padi-badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7ecec6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              <div className="padi-badge-text">
+                <p>PADI Open Water Scuba Instructor</p>
+                <strong>OWSI &nbsp;#465559</strong>
+              </div>
+            </div>
+
             <div className="ssi-badge">
               <div className="ssi-logo">SSI</div>
               <div className="ssi-badge-text">
@@ -82,8 +91,16 @@ export default function About({ lang }) {
                 <div className="cred-label">{t.credDivesL}</div>
               </div>
               <div className="cred-card">
-                <div className="cred-num">{t.credYears}</div>
-                <div className="cred-label">{t.credYearsL}</div>
+                <div className="cred-num">Since 2000</div>
+                <div className="cred-label">Diving Experience</div>
+              </div>
+              <div className="cred-card">
+                <div className="cred-num">Since 2019</div>
+                <div className="cred-label">In Maldives</div>
+              </div>
+              <div className="cred-card">
+                <div className="cred-num">OWSI</div>
+                <div className="cred-label">PADI Certified</div>
               </div>
             </div>
 
