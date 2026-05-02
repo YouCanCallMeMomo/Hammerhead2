@@ -1,25 +1,27 @@
 export default function About({ lang }) {
   const t = {
     en: {
-      eyebrow: 'Your Guide',
-      h2: 'Dive with Abdul Manan',
-      bio1: 'I\'ve spent over a decade guiding divers through the crystal-blue waters of the Maldives. From thrilling shark encounters at Rasdhoo Atoll to serene manta ray cleaning stations, every dive I lead is tailored to your experience level and curiosity.',
-      bio2: 'I operate aboard a purpose-built Maldivian Dhoni liveaboard — small groups only, fully crewed, with all meals included. When you book with me directly, you get a personal guide who knows every reef, every current, every season.',
-      credDives: '15,000+', credDivesL: 'Dives logged',
-      credYears: '10+', credYearsL: 'Years guiding',
-      langTitle: 'Languages spoken',
+      eyebrow: 'Your Instructor',
+      h2: <>Meet Abdul Manan, <em>PADI OWSI #465559</em></>,
+      bio1: 'I have been diving since 2000. With over 15,000 dives across Indonesia and the Maldives, I do not just guide you — I help you truly understand and fall in love with the ocean. Based in Malé since 2019, I know every current, every cleaning station, and every feeding ground in these waters.',
+      credDives: '15,000+', credDivesL: 'Logged Dives',
+      credYears: 'Since 2000', credYearsL: 'Diving Experience',
+      credMaldives: 'Since 2019', credMaldivesL: 'In Maldives',
+      credCert: 'OWSI', credCertL: 'PADI Certified',
+      langTitle: 'I speak your language',
       ssiLabel: 'SSI Certified',
       ssiName: 'Abdul Manan',
       ssiPro: 'Dive Pro #56293',
       ssiLevel: 'Divemaster Instructor',
     },
     id: {
-      eyebrow: 'Pemandu Anda',
-      h2: 'Menyelam bersama Abdul Manan',
-      bio1: 'Saya telah menghabiskan lebih dari satu dekade memandu penyelam di perairan biru jernih Maladewa. Dari pertemuan hiu yang mendebarkan di Rasdhoo Atoll hingga stasiun pembersihan pari manta yang tenang, setiap penyelaman yang saya pimpin disesuaikan dengan tingkat pengalaman dan keingintahuan Anda.',
-      bio2: 'Saya beroperasi di atas perahu Dhoni Maldiva yang dibangun khusus — hanya kelompok kecil, kru lengkap, dengan semua makan termasuk. Ketika Anda memesan langsung dengan saya, Anda mendapatkan pemandu pribadi yang mengenal setiap terumbu karang.',
-      credDives: '15.000+', credDivesL: 'Selaman tercatat',
-      credYears: '10+', credYearsL: 'Tahun memandu',
+      eyebrow: 'Instruktur Anda',
+      h2: <>Kenali Abdul Manan, <em>PADI OWSI #465559</em></>,
+      bio1: 'Saya telah menyelam sejak tahun 2000. Dengan lebih dari 15.000 penyelaman di Indonesia dan Maladewa, saya tidak hanya memandu Anda — saya membantu Anda benar-benar memahami dan jatuh cinta pada lautan. Berbasis di Malé sejak 2019, saya mengetahui setiap arus, setiap stasiun pembersihan, dan setiap area mencari makan di perairan ini.',
+      credDives: '15.000+', credDivesL: 'Total Penyelaman',
+      credYears: 'Sejak 2000', credYearsL: 'Pengalaman Menyelam',
+      credMaldives: 'Sejak 2019', credMaldivesL: 'Di Maladewa',
+      credCert: 'OWSI', credCertL: 'Tersertifikasi PADI',
       langTitle: 'Bahasa yang digunakan',
       ssiLabel: 'Bersertifikat SSI',
       ssiName: 'Abdul Manan',
@@ -27,13 +29,14 @@ export default function About({ lang }) {
       ssiLevel: 'Divemaster Instructor',
     },
     de: {
-      eyebrow: 'Ihr Guide',
-      h2: 'Tauchen mit Abdul Manan',
-      bio1: 'Ich führe seit über einem Jahrzehnt Taucher durch die kristallklaren Gewässer der Malediven. Von aufregenden Haibegegnungen am Rasdhoo-Atoll bis hin zu ruhigen Mantarochen-Reinigungsstationen — jeder Tauchgang, den ich leite, ist auf Ihr Erfahrungsniveau zugeschnitten.',
-      bio2: 'Ich operiere auf einem eigens gebauten maledivischen Dhoni-Liveaboard — nur Kleingruppen, voll bemannt, alle Mahlzeiten inklusive. Wenn Sie direkt bei mir buchen, erhalten Sie einen persönlichen Guide, der jedes Riff kennt.',
-      credDives: '15.000+', credDivesL: 'Tauchgänge',
-      credYears: '10+', credYearsL: 'Jahre als Guide',
-      langTitle: 'Gesprochene Sprachen',
+      eyebrow: 'Dein Tauchlehrer',
+      h2: <>Lerne Abdul Manan kennen, <em>PADI OWSI #465559</em></>,
+      bio1: 'Ich tauche seit dem Jahr 2000. Mit über 15.000 Tauchgängen in Indonesien und den Malediven führe ich Sie nicht nur — ich helfe Ihnen, den Ozean wirklich zu verstehen und zu lieben. Seit 2019 in Malé ansässig, kenne ich jede Strömung, jede Putzerstation und jeden Futterplatz in diesen Gewässern.',
+      credDives: '15.000+', credDivesL: 'Geloggte Tauchgänge',
+      credYears: 'Seit 2000', credYearsL: 'Taucherfahrung',
+      credMaldives: 'Seit 2019', credMaldivesL: 'Auf den Malediven',
+      credCert: 'OWSI', credCertL: 'PADI-zertifiziert',
+      langTitle: 'Ich spreche deine Sprache',
       ssiLabel: 'SSI Zertifiziert',
       ssiName: 'Abdul Manan',
       ssiPro: 'Dive Pro #56293',
@@ -83,7 +86,6 @@ export default function About({ lang }) {
           {/* Bio + credentials */}
           <div className="reveal">
             <p className="about-bio">{t.bio1}</p>
-            <p className="about-bio" style={{marginTop:'1rem'}}>{t.bio2}</p>
 
             <div className="cred-row">
               <div className="cred-card">
@@ -91,16 +93,16 @@ export default function About({ lang }) {
                 <div className="cred-label">{t.credDivesL}</div>
               </div>
               <div className="cred-card">
-                <div className="cred-num">Since 2000</div>
-                <div className="cred-label">Diving Experience</div>
+                <div className="cred-num">{t.credYears}</div>
+                <div className="cred-label">{t.credYearsL}</div>
               </div>
               <div className="cred-card">
-                <div className="cred-num">Since 2019</div>
-                <div className="cred-label">In Maldives</div>
+                <div className="cred-num">{t.credMaldives}</div>
+                <div className="cred-label">{t.credMaldivesL}</div>
               </div>
               <div className="cred-card">
-                <div className="cred-num">OWSI</div>
-                <div className="cred-label">PADI Certified</div>
+                <div className="cred-num">{t.credCert}</div>
+                <div className="cred-label">{t.credCertL}</div>
               </div>
             </div>
 
