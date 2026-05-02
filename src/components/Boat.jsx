@@ -47,11 +47,8 @@ export default function Boat({ lang }) {
         <p style={{marginTop:'1rem', fontSize:'.95rem', lineHeight:1.8, color:'var(--ink2)', maxWidth:'680px'}}>{t.desc}</p>
 
         <div className="boat-photos reveal">
-          <div className="boat-photo-main">
-            <img src={PHOTOS[0].src} alt={PHOTOS[0].alt} />
-          </div>
-          {PHOTOS.slice(1).map((p, i) => (
-            <div className="boat-photo-sm" key={i}>
+          {PHOTOS.map((p, i) => (
+            <div className="boat-photo" key={i}>
               <img src={p.src} alt={p.alt} />
             </div>
           ))}

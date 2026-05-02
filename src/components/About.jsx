@@ -7,11 +7,7 @@ export default function About({ lang }) {
       credDives: '15,000+', credDivesL: 'Logged Dives',
       credYears: 'Since 2000', credYearsL: 'Diving Experience',
       credMaldives: 'Since 2019', credMaldivesL: 'In Maldives',
-      credCert: 'OWSI', credCertL: 'PADI Certified',
-      langTitle: 'I speak your language',
-      ssiLabel: 'SSI Certified',
-      ssiName: 'Abdul Manan',
-      ssiPro: 'Dive Pro #56293',
+      credCert: 'PADI & SSI', credCertL: 'Certified Instructor',
       ssiLevel: 'Divemaster Instructor',
     },
     id: {
@@ -21,11 +17,7 @@ export default function About({ lang }) {
       credDives: '15.000+', credDivesL: 'Total Penyelaman',
       credYears: 'Sejak 2000', credYearsL: 'Pengalaman Menyelam',
       credMaldives: 'Sejak 2019', credMaldivesL: 'Di Maladewa',
-      credCert: 'OWSI', credCertL: 'Tersertifikasi PADI',
-      langTitle: 'Bahasa yang digunakan',
-      ssiLabel: 'Bersertifikat SSI',
-      ssiName: 'Abdul Manan',
-      ssiPro: 'Dive Pro #56293',
+      credCert: 'PADI & SSI', credCertL: 'Instruktur Bersertifikat',
       ssiLevel: 'Divemaster Instructor',
     },
     de: {
@@ -35,11 +27,7 @@ export default function About({ lang }) {
       credDives: '15.000+', credDivesL: 'Geloggte Tauchgänge',
       credYears: 'Seit 2000', credYearsL: 'Taucherfahrung',
       credMaldives: 'Seit 2019', credMaldivesL: 'Auf den Malediven',
-      credCert: 'OWSI', credCertL: 'PADI-zertifiziert',
-      langTitle: 'Ich spreche deine Sprache',
-      ssiLabel: 'SSI Zertifiziert',
-      ssiName: 'Abdul Manan',
-      ssiPro: 'Dive Pro #56293',
+      credCert: 'PADI & SSI', credCertL: 'Zertifizierter Tauchlehrer',
       ssiLevel: 'Divemaster Instructor',
     },
   }[lang]
@@ -62,23 +50,24 @@ export default function About({ lang }) {
           <div className="about-photo-wrap reveal">
             <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" />
             
-            <div className="padi-badge">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7ecec6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="8" r="6"/>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-              </svg>
-              <div className="padi-badge-text">
-                <p>PADI Open Water Scuba Instructor</p>
-                <strong>OWSI &nbsp;#465559</strong>
+            <div className="padi-badge" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '16px 20px'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', width: '100%'}}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7ecec6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="6"/>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+                <div className="padi-badge-text">
+                  <p>PADI Open Water Scuba Instructor</p>
+                  <strong>OWSI &nbsp;#465559</strong>
+                </div>
               </div>
-            </div>
-
-            <div className="ssi-badge">
-              <div className="ssi-logo">SSI</div>
-              <div className="ssi-badge-text">
-                <p>{t.ssiLabel}</p>
-                <strong>{t.ssiName}</strong>
-                <span>{t.ssiLevel} · {t.ssiPro}</span>
+              <div style={{height: '1px', background: 'rgba(255,255,255,0.15)', width: '100%'}}></div>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', width: '100%'}}>
+                <div className="ssi-logo" style={{width: '24px', height: '24px', fontSize: '.6rem'}}>SSI</div>
+                <div className="padi-badge-text">
+                  <p>SSI Divemaster Instructor</p>
+                  <strong>Dive Pro &nbsp;#56293</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -106,16 +95,7 @@ export default function About({ lang }) {
               </div>
             </div>
 
-            {/* SSI detail card */}
-            <div className="cred-card" style={{marginBottom:'16px', background:'linear-gradient(135deg,#e8f4f2,#f0f9f7)', borderColor:'var(--border2)'}}>
-              <div style={{display:'flex', alignItems:'center', gap:'12px'}}>
-                <div className="ssi-logo" style={{width:'36px',height:'36px',fontSize:'.75rem'}}>SSI</div>
-                <div>
-                  <div style={{fontWeight:700, color:'var(--teal)', fontSize:'1rem'}}>Abdul Manan</div>
-                  <div style={{fontSize:'.78rem', color:'var(--ink3)'}}>Divemaster Instructor · Dive Pro #56293</div>
-                </div>
-              </div>
-            </div>
+
 
             <p style={{fontSize:'.8rem', fontWeight:600, color:'var(--ink3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:'10px'}}>
               {t.langTitle}
