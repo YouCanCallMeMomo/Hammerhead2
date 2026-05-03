@@ -175,9 +175,9 @@ nav.site-nav.scrolled { box-shadow: var(--shadow); }
 /* ===========================
    ABOUT
 =========================== */
-.about-grid { display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: stretch; margin-top: 48px; }
-.about-photo-wrap { position: relative; border-radius: var(--r); overflow: hidden; height: 100%; }
-.about-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-grid { display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+.about-photo-wrap { position: relative; border-radius: var(--r); overflow: hidden; max-height: 500px; }
+.about-photo-wrap img { width: 100%; height: 500px; object-fit: cover; object-position: center top; display: block; }
 .ssi-badge {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: rgba(14,31,61,.92); backdrop-filter: blur(8px);
