@@ -46,27 +46,29 @@ export default function About({ lang }) {
         <div className="divider-rule" />
 
         <div className="about-grid">
-          {/* Photo + PADI Badge + SSI Badge */}
-          <div className="about-photo-wrap reveal">
-            <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" loading="lazy" />
-            
-            <div className="padi-badge" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '16px 20px'}}>
-              <div style={{display: 'flex', alignItems: 'center', gap: '12px', width: '100%'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7ecec6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          {/* Photo column: image + badge below */}
+          <div className="about-photo-col reveal">
+            <div className="about-photo-wrap">
+              <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" loading="lazy" />
+            </div>
+
+            {/* PADI & SSI badge — below the photo */}
+            <div className="padi-cert-row">
+              <div className="padi-cert-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ecec6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="8" r="6"/>
                   <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
                 </svg>
-                <div className="padi-badge-text">
-                  <p>PADI Open Water Scuba Instructor</p>
-                  <strong>OWSI &nbsp;#465559</strong>
+                <div>
+                  <p className="cert-label">PADI Open Water Scuba Instructor</p>
+                  <strong className="cert-num">OWSI &nbsp;#465559</strong>
                 </div>
               </div>
-              <div style={{height: '1px', background: 'rgba(255,255,255,0.15)', width: '100%'}}></div>
-              <div style={{display: 'flex', alignItems: 'center', gap: '12px', width: '100%'}}>
-                <div className="ssi-logo" style={{width: '24px', height: '24px', fontSize: '.6rem'}}>SSI</div>
-                <div className="padi-badge-text">
-                  <p>SSI Divemaster Instructor</p>
-                  <strong>Dive Pro &nbsp;#56293</strong>
+              <div className="padi-cert-item">
+                <div className="ssi-logo" style={{width:'26px',height:'26px',fontSize:'.6rem',flexShrink:0}}>SSI</div>
+                <div>
+                  <p className="cert-label">SSI Divemaster Instructor</p>
+                  <strong className="cert-num">Dive Pro &nbsp;#56293</strong>
                 </div>
               </div>
             </div>
