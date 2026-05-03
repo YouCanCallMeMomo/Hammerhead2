@@ -54,7 +54,13 @@ export default function Boat({ lang }) {
           ))}
         </div>
 
-        <h3 style={{marginTop:'36px', marginBottom:'4px'}}>{t.specsTitle}</h3>
+        <h3 style={{marginTop:'36px', marginBottom:'16px'}}>{t.specsTitle}</h3>
+
+        {/* Featured vessel image */}
+        <div className="boat-hero-img reveal">
+          <img src="/boat-hero.jpeg" alt="Maldives liveaboard vessel — Hammerhead dive safari" loading="lazy" />
+        </div>
+
         <div className="boat-specs reveal">
           {SPECS.map((s, i) => (
             <div className="spec-card" key={i}>

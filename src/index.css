@@ -238,6 +238,8 @@ nav.site-nav.scrolled { box-shadow: var(--shadow); }
 .boat-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .boat-photo { border-radius: var(--r); overflow: hidden; aspect-ratio: 4/3; }
 .boat-photo img { width: 100%; height: 100%; object-fit: cover; }
+.boat-hero-img { border-radius: var(--r); overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow); }
+.boat-hero-img img { width: 100%; height: 360px; object-fit: cover; object-position: center; display: block; }
 .boat-specs { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 28px; }
 .spec-card {
   background: var(--white); border: 1px solid var(--border);
