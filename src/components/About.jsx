@@ -48,7 +48,7 @@ export default function About({ lang }) {
         <div className="about-grid">
           {/* Photo + PADI Badge + SSI Badge */}
           <div className="about-photo-wrap reveal">
-            <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" />
+            <img src="/abdul-manan.jpg" alt="Abdul Manan — Maldives Dive Guide" loading="lazy" />
             
             <div className="padi-badge" style={{flexDirection: 'column', alignItems: 'flex-start', gap: '8px', padding: '16px 20px'}}>
               <div style={{display: 'flex', alignItems: 'center', gap: '12px', width: '100%'}}>

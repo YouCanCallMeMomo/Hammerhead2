@@ -49,7 +49,7 @@ export default function Boat({ lang }) {
         <div className="boat-photos reveal">
           {PHOTOS.map((p, i) => (
             <div className="boat-photo" key={i}>
-              <img src={p.src} alt={p.alt} />
+              <img src={p.src} alt={p.alt} loading="lazy" />
             </div>
           ))}
         </div>
