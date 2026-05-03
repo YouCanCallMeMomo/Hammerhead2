@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef, useCallback } from 'react'
+
 const REVIEWS = [
   {
     stars: '★★★★★',
@@ -30,6 +32,61 @@ const REVIEWS = [
 ]
 
 export default function Testimonials({ lang }) {
+  const [idx, setIdx] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const scrollRef = useRef(null)
+  const timerRef = useRef(null)
+  const total = REVIEWS.length
+
+  const getCardOffset = useCallback((i) => {
+    const wrap = scrollRef.current
+    if (!wrap) return 0
+    const card = wrap.querySelector('.testi-card')
+    if (!card) return 0
+    return i * (card.offsetWidth + 20)
+  }, [])
+
+  const scrollToIdx = useCallback((i) => {
+    const newIdx = ((i % total) + total) % total
+    const wrap = scrollRef.current
+    if (wrap) wrap.scrollTo({ left: getCardOffset(newIdx), behavior: 'smooth' })
+    setIdx(newIdx)
+  }, [total, getCardOffset])
+
+  const next = useCallback(() => scrollToIdx(idx + 1), [idx, scrollToIdx])
+  const prev = useCallback(() => scrollToIdx(idx - 1), [idx, scrollToIdx])
+
+  // Sync idx when user manually swipes
+  useEffect(() => {
+    const wrap = scrollRef.current
+    if (!wrap) return
+    const onScroll = () => {
+      const card = wrap.querySelector('.testi-card')
+      if (!card) return
+      const newIdx = Math.round(wrap.scrollLeft / (card.offsetWidth + 20))
+      setIdx(Math.min(newIdx, total - 1))
+    }
+    wrap.addEventListener('scroll', onScroll, { passive: true })
+    return () => wrap.removeEventListener('scroll', onScroll)
+  }, [total])
+
+  // Auto-play
+  useEffect(() => {
+    if (paused) { clearInterval(timerRef.current); return }
+    timerRef.current = setInterval(() => {
+      setIdx(i => {
+        const newIdx = (i + 1) % total
+        const wrap = scrollRef.current
+        if (wrap) {
+          const card = wrap.querySelector('.testi-card')
+          if (card) wrap.scrollTo({ left: newIdx * (card.offsetWidth + 20), behavior: 'smooth' })
+        }
+        return newIdx
+      })
+    }, 4000)
+    return () => clearInterval(timerRef.current)
+  }, [paused, total])
+
   const t = {
     en: { eyebrow: 'Guest Reviews', h2: 'What divers say' },
     id: { eyebrow: 'Ulasan Tamu', h2: 'Kata para penyelam' },
@@ -43,20 +100,55 @@ export default function Testimonials({ lang }) {
         <h2>{t.h2}</h2>
         <div className="divider-rule" />
 
-        <div className="testi-carousel reveal">
-          {REVIEWS.map((r, i) => (
-            <div className="testi-card" key={i}>
-              <div className="testi-stars">{r.stars}</div>
-              <p className="testi-text">{r.text}</p>
-              <div className="testi-author">
-                <span className="testi-flag">{r.flag}</span>
-                <div>
-                  <div className="tname">{r.name}</div>
-                  <div className="tmeta">{r.meta}</div>
+        <div
+          className="testi-outer reveal"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Scroll track */}
+          <div className="testi-scroll" ref={scrollRef}>
+            {REVIEWS.map((r, i) => (
+              <div className={`testi-card${i === idx ? ' active' : ''}`} key={i}>
+                <div className="testi-stars">{r.stars}</div>
+                <p className="testi-text">{r.text}</p>
+                <div className="testi-author">
+                  <span className="testi-flag">{r.flag}</span>
+                  <div>
+                    <div className="tname">{r.name}</div>
+                    <div className="tmeta">{r.meta}</div>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Navigation bar */}
+          <div className="testi-nav">
+            <button className="testi-btn" onClick={prev} aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+
+            <div className="testi-dots">
+              {REVIEWS.map((_, i) => (
+                <button
+                  key={i}
+                  className={`testi-dot${i === idx ? ' active' : ''}`}
+                  onClick={() => scrollToIdx(i)}
+                  aria-label={`Go to review ${i + 1}`}
+                />
+              ))}
             </div>
-          ))}
+
+            <span className="testi-counter">{idx + 1} / {total}</span>
+
+            <button className="testi-btn" onClick={next} aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

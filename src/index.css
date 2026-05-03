@@ -292,15 +292,24 @@ table.slots tr:hover td:first-child { background: var(--teal-lt); }
 /* ===========================
    TESTIMONIALS
 =========================== */
-.testi-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding-bottom: 24px; -webkit-overflow-scrolling: touch; margin-top: 40px; scrollbar-width: thin; scrollbar-color: var(--teal) var(--border); }
-.testi-carousel::-webkit-scrollbar { height: 8px; }
-.testi-carousel::-webkit-scrollbar-track { background: var(--border); border-radius: 4px; }
-.testi-carousel::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 4px; }
+.testi-outer { margin-top: 40px; }
+.testi-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.testi-scroll::-webkit-scrollbar { display: none; }
 .testi-card {
-  background: var(--white); border: 1px solid var(--border);
+  background: var(--white); border: 2px solid var(--border);
   border-radius: var(--r); padding: 28px; position: relative;
   min-width: calc(50% - 10px); flex-shrink: 0; scroll-snap-align: start;
+  transition: border-color .3s;
 }
+.testi-card.active { border-color: var(--teal); }
 .testi-card::before {
   content: '\201C'; font-family: var(--font-head);
   font-size: 5rem; color: var(--teal-lt);
@@ -312,6 +321,26 @@ table.slots tr:hover td:first-child { background: var(--teal-lt); }
 .testi-flag { font-size: 1.4rem; }
 .tname { font-size: .9rem; font-weight: 700; color: var(--ink); }
 .tmeta { font-size: .78rem; color: var(--ink3); }
+/* Nav bar */
+.testi-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-top: 20px;
+}
+.testi-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--ink2); transition: all .2s; flex-shrink: 0;
+}
+.testi-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-lt); }
+.testi-dots { display: flex; gap: 8px; align-items: center; }
+.testi-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid var(--border); background: transparent;
+  cursor: pointer; transition: all .3s; padding: 0; flex-shrink: 0;
+}
+.testi-dot.active { background: var(--teal); border-color: var(--teal); width: 28px; border-radius: 5px; }
+.testi-counter { font-size: .82rem; color: var(--ink3); min-width: 28px; text-align: center; }
 
 /* ===========================
    PRICING
@@ -421,7 +450,7 @@ footer.site-footer a:hover { color: #7ecec6; }
   .boat-photos { grid-template-columns: 1fr; }
   .boat-specs { grid-template-columns: repeat(2,1fr); }
   .pricing-grid { grid-template-columns: 1fr; }
-  .testi-card { min-width: 85%; scroll-margin-left: 24px; }
+  .testi-card { min-width: 85%; }
   .contact-cards { flex-direction: column; }
   .hero-stats { grid-template-columns: repeat(3,1fr); }
   .section { padding: 64px 0; }
