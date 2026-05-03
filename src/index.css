@@ -178,7 +178,7 @@ nav.site-nav.scrolled { box-shadow: var(--shadow); }
 .about-grid { display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: start; margin-top: 48px; }
 .about-photo-col { display: flex; flex-direction: column; gap: 0; }
 .about-photo-wrap { border-radius: var(--r); overflow: hidden; }
-.about-photo-wrap img { width: 100%; height: 370px; object-fit: cover; object-position: center top; display: block; }
+.about-photo-wrap img { width: 100%; height: 420px; object-fit: cover; object-position: center top; display: block; }
 /* Badge below photo */
 .padi-cert-row { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--r) var(--r); background: var(--white); }
 .padi-cert-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-top: 1px solid var(--border); }
