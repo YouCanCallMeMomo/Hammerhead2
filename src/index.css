@@ -248,17 +248,31 @@ nav.site-nav.scrolled { box-shadow: var(--shadow); }
 .leg { display: flex; align-items: center; gap: 7px; font-size: .82rem; color: var(--ink2); }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .dot-a { background: #2a7d6f; } .dot-f { background: #d45c5c; } .dot-fw { background: #c98e2a; } .dot-c { background: #4a68a8; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r); }
-table.slots { width: 100%; border-collapse: collapse; min-width: 600px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r); -webkit-overflow-scrolling: touch; }
+table.slots { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 560px; }
 table.slots thead { background: var(--navy); }
 table.slots th {
   padding: 13px 16px; text-align: left;
   font-family: var(--font-body); font-size: .72rem; font-weight: 600;
   letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.7);
+  position: sticky; top: 0; background: var(--navy); z-index: 2;
+}
+/* Freeze first column header */
+table.slots th:first-child {
+  position: sticky; left: 0; z-index: 3;
+  background: var(--navy);
+  box-shadow: 2px 0 6px rgba(14,31,61,.12);
 }
 table.slots td { padding: 14px 16px; font-size: .9rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
 table.slots tr:last-child td { border-bottom: none; }
 table.slots tr:hover td { background: var(--teal-lt); }
+/* Freeze first column cells */
+table.slots td:first-child {
+  position: sticky; left: 0; z-index: 1;
+  background: var(--cream);
+  box-shadow: 2px 0 6px rgba(14,31,61,.08);
+}
+table.slots tr:hover td:first-child { background: var(--teal-lt); }
 .trip-name { font-weight: 600; color: var(--ink); }
 .trip-route { font-size: .78rem; color: var(--ink3); margin-top: 2px; }
 .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
@@ -414,4 +428,11 @@ footer.site-footer a:hover { color: #7ecec6; }
   .boat-specs { grid-template-columns: repeat(2,1fr); }
   .wa-float .wa-label { display: none; }
   .wa-float { padding: 12px 14px; }
+
+  /* Table mobile: tighter padding, smaller fonts */
+  table.slots th { padding: 10px 12px; font-size: .68rem; letter-spacing: 1px; }
+  table.slots td { padding: 11px 12px; font-size: .82rem; }
+  table.slots th:first-child, table.slots td:first-child { padding-left: 14px; min-width: 80px; }
+  .book-link { padding: 5px 10px; font-size: .72rem; }
+  .pill { padding: 3px 8px; font-size: .7rem; }
 }
