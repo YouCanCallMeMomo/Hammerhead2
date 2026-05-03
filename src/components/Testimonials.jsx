@@ -43,9 +43,9 @@ export default function Testimonials({ lang }) {
         <h2>{t.h2}</h2>
         <div className="divider-rule" />
 
-        <div className="testi-grid">
+        <div className="testi-carousel reveal">
           {REVIEWS.map((r, i) => (
-            <div className="testi-card reveal" key={i}>
+            <div className="testi-card" key={i}>
               <div className="testi-stars">{r.stars}</div>
               <p className="testi-text">{r.text}</p>
               <div className="testi-author">

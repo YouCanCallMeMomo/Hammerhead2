@@ -42,9 +42,9 @@ export default function App() {
         <About lang={lang} />
         <WhyBook lang={lang} />
         <Boat lang={lang} />
+        <Pricing lang={lang} />
         <Slots lang={lang} />
         <Testimonials lang={lang} />
-        <Pricing lang={lang} />
         <FAQ lang={lang} />
         <Contact lang={lang} />
       </main>
