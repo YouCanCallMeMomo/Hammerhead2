@@ -37,16 +37,16 @@ export default function Slots({ lang }) {
       h2: 'Availability & booking',
       lead: 'Reserve your slot by contacting me directly on WhatsApp. Dates fill fast.',
       col1: 'Trip (Days)', col2: 'Dates', col3: 'Status', col4: 'Info', col5: 'Action',
-      book: 'Book with Abdul',
+      book: 'Book now!',
       full: 'Full',
       note: 'All prices per person, twin-share basis. Includes all dives, full-board meals, transfers from Male. Payment terms discussed directly — no third-party platform fees.',
     },
     id: {
       eyebrow: 'Trip Mendatang',
       h2: 'Ketersediaan & pemesanan',
-      lead: 'Pesan slot Anda dengan menghubungi saya langsung di WhatsApp.',
+      lead: 'Pesan slot Anda dengan menghusbungi saya langsung di WhatsApp.',
       col1: 'Trip (Hari)', col2: 'Tanggal', col3: 'Status', col4: 'Info', col5: 'Aksi',
-      book: 'Pesan dengan Abdul',
+      book: 'Book now!',
       full: 'Penuh',
       note: 'Semua harga per orang, basis twin-share. Termasuk semua penyelaman, makan penuh, transfer dari Male.',
     },
@@ -55,7 +55,7 @@ export default function Slots({ lang }) {
       h2: 'Verfügbarkeit & Buchung',
       lead: 'Reservieren Sie Ihren Platz direkt bei mir auf WhatsApp.',
       col1: 'Reise (Tage)', col2: 'Daten', col3: 'Status', col4: 'Info', col5: 'Aktion',
-      book: 'Buchen bei Abdul',
+      book: 'Book now!',
       full: 'Voll',
       note: 'Alle Preise pro Person, Twin-Basis. Inklusive aller Tauchgänge, Vollpension, Transfers ab Male.',
     },
@@ -69,14 +69,14 @@ export default function Slots({ lang }) {
         <div className="divider-rule" />
         <p className="lead">{t.lead}</p>
 
-        <div style={{display:'flex', gap:'20px', flexWrap:'wrap', margin:'20px 0'}}>
+        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', margin: '20px 0' }}>
           {[
-            {cls:'dot-a', label:'Available'},
-            {cls:'dot-f', label:'Full'},
-            {cls:'dot-fw', label:'Few left'},
+            { cls: 'dot-a', label: 'Available' },
+            { cls: 'dot-f', label: 'Full' },
+            { cls: 'dot-fw', label: 'Few left' },
           ].map(l => (
             <span className="leg" key={l.label}>
-              <span className={`leg-dot ${l.cls}`}/>
+              <span className={`leg-dot ${l.cls}`} />
               {l.label}
             </span>
           ))}
@@ -103,7 +103,7 @@ export default function Slots({ lang }) {
                     </td>
                     <td>{s.dates}</td>
                     <td><span className={`pill ${st.pill}`}>{st.label}</span></td>
-                    <td className="price-col" style={{fontSize: '.9rem', fontWeight: '500', color: 'var(--ink2)'}}>{s.info}</td>
+                    <td className="price-col" style={{ fontSize: '.9rem', fontWeight: '500', color: 'var(--ink2)' }}>{s.info}</td>
                     <td>
                       {s.status === 'full'
                         ? <span className="book-link disabled">{t.full}</span>
